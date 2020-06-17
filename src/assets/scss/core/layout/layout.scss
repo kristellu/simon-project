@@ -400,10 +400,9 @@ $left-part-width: 260px;
 .unisimon-ico {
     background-position: center;
     background-size: cover;
-    width: 20px !important;
-    height: 20px !important;
+    width: 30px !important;
+    height: 30px !important;
     background-repeat: no-repeat;
-    margin-right: 10px;
     display: block;
 }
 
@@ -830,7 +829,8 @@ ul.first-level .sidebar-item .sidebar-link {
 
 .arrow-user {
     display: block;
-    margin-right: 2px;
+    margin-top: 10px;
+    margin-right: 5px;
     margin-left: 5px;
     width: 7px;
     height: 7px;
