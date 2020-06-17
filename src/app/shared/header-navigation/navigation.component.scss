@@ -1,0 +1,33 @@
+.menu{
+    @media screen and (max-width:768px){
+        margin-left: 650px;
+        position: absolute;
+    }
+    @media screen and (max-width:763px){
+        margin-left: 620px;
+        position: absolute;
+    }
+    @media screen and (max-width:712px){
+        margin-left: 600px;
+        position: absolute;
+    }
+    @media screen and (max-width:500x){
+        margin-left: 200px;
+        position: absolute;
+    }
+    
+    @media screen and (max-width:430px){
+        margin-left: 300px;
+        position: absolute;
+    }
+
+    @media screen and (max-width:375px){
+        margin-left: 250px;
+        position: absolute;
+    }
+    @media screen and (max-width:320px){
+        margin-left: 200px;
+        position: absolute;
+    }
+   
+}

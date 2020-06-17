@@ -1,0 +1,47 @@
+.header1{
+    margin-top:30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color:#026533;
+  }
+
+  .card-table {
+    height: 370px;
+
+  }
+
+  .row{
+    @media screen and (max-width:780px){
+      .card-table{
+        width: 600px;
+      }
+    }
+  }
+  
+  table {
+    width: 100%;
+    margin:0 auto;
+  }
+
+  .header-table{
+    font-weight: bold;
+    padding-left: 9%;
+  }
+  
+  
+  .checkbox-label {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    text-rendering: optimizeLegibility;
+    text-transform: capitalize;
+  }
+  
+  :host .mat-stroked-button{
+    border-radius: 20px !important;
+  }
+
+  .button-upload{
+    font-weight: bold; width: 120px;
+  }
+

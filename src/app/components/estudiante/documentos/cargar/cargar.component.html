@@ -1,0 +1,37 @@
+<div class="row" style="justify-content: center; flex-direction: column;">
+    <mat-card class="card-table">
+        <mat-card-content>
+            <div class="row" style="justify-content: center;">
+                <div class="col-12" style="padding: 0 40px;">
+                    <mat-card-title class="header1">APORTE A LA DOCUMENTACIÓN</mat-card-title>
+                    <div>
+                        <table mat-table [dataSource]="dataSource">
+                            <!-- Document Column -->
+                            <ng-container matColumnDef="documento">
+                                <th class="header-table" mat-header-cell *matHeaderCellDef mat-sort-header> DOCUMENTO </th>
+                                <td mat-cell *matCellDef="let element"><mat-checkbox color="primary" >
+                                    <p  class="checkbox-label" style="margin:0;"> {{element.documento}} </p></mat-checkbox> </td>
+                            </ng-container>
+                
+                
+                            <!-- Evidences Column -->
+                            <ng-container matColumnDef="id">
+                                <th class="header-table"  mat-header-cell *matHeaderCellDef mat-sort-header> EVIDENCIAS </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <!--  file chooser -->
+                                    <button mat-stroked-button color="primary" class="button-upload" (click)="abrirModal()"> CARGAR <mat-icon>cloud_upload</mat-icon></button>
+                                </td>
+                            </ng-container>
+                
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                        <!-- <p>Total</p> -->
+                    </div> 
+                    
+                </div>
+            </div>
+            
+        </mat-card-content>
+    </mat-card>
+</div>

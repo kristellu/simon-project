@@ -1,0 +1,153 @@
+<div class="container">
+    <div class="d-flex flex-row bd-highlight pt-2 mb-2">
+        <div class="d-flex justify-content-start mr-auto">
+            <h3 class="card-title unisimon-titulo">Portal de Estudiantes</h3>
+        </div>
+        <mat-chip-list aria-label="options">
+            <mat-chip color="cancelar" selected>CANCELAR</mat-chip>
+            <mat-chip color="primary" selected>
+                <a style="color:white;" routerLink="/dashboard/documentos">CONTINUAR</a> 
+                <mat-icon>keyboard_arrow_right</mat-icon> 
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+
+    <div class="menu">
+        <mat-card class="card-linea">
+            <mat-card-header>
+                <mat-card-title class="header1">ESCOJA SU LÍNEA DE CRÉDITO</mat-card-title>
+            </mat-card-header>
+
+            <div [formGroup]="formSolicitudes">
+                <mat-card-content class="body-card">
+                    <mat-form-field>
+                        <mat-label>Línea</mat-label>
+                        <mat-select formControlName="linea">
+                            <!-- <mat-option  *ngFor="let obj of listLinea" [value]="obj.id">
+                                    {{obj.nombre}}
+                                  </mat-option> -->
+                            <mat-option value="1"> ICETEX </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="f.linea.errors?.required">Por favor elegir una línea de crédito
+                        </mat-error>
+                    </mat-form-field>
+                </mat-card-content>
+            </div>
+        </mat-card>
+
+        <mat-card class="card-sublinea">
+            <mat-card-header>
+                <mat-card-title class="header1">SUB LÍNEA DE CRÉDITO</mat-card-title>
+            </mat-card-header>
+            <div [formGroup]="formSolicitudes">
+                <mat-card-content class="body-card">
+                    <mat-form-field style=" width: 600px;">
+                        <mat-label>Sub Línea</mat-label>
+                        <mat-select formControlName="sublinea">
+                            <!-- <mat-option  *ngFor="*ngFor="let obj of listSublinea" [value]="obj.id">
+                                    {{obj.nombre}}
+                                  </mat-option> -->
+                            <mat-option value="1"> Alianza Suma tu Región Barranquilla</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="f.sublinea.errors?.required">Por favor elegir una sub línea de crédito
+                        </mat-error>
+                    </mat-form-field>
+                </mat-card-content>
+            </div>
+        </mat-card>
+
+    </div>
+
+    <div class="row" style="justify-content: center; flex-direction: column;">
+        <mat-card>
+            <mat-card-content>
+                <div class="row" style="justify-content: center;">
+                    <div class="col-12" style="
+                    padding: 0 16px; ">
+                        <mat-card-title class="header1">SELECCIONE</mat-card-title>
+
+                        <!-- <div class="mat-elevation-z8"> -->
+                            <table mat-table [dataSource]="dataSource">
+
+                                <!-- Service Column -->
+                                <ng-container matColumnDef="servicio">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> SERVICIO </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <mat-checkbox color="primary">
+                                            <p class="checkbox-label" style="margin:0;"> {{element.servicio}} </p>
+                                        </mat-checkbox>
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef> Total </td>
+                                </ng-container>
+
+                                <!-- View Column -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef></th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                            Launch demo modal
+                                          </button> -->
+                                       <button mat-stroked-button color="primary" data-toggle="modal" data-target="#exampleModal"> Ver Volante <mat-icon>remove_red_eye</mat-icon></button>
+                                  </td>
+                                    <td mat-footer-cell *matFooterCellDef></td>
+                                </ng-container>
+
+                                <!-- Value Column -->
+                                <ng-container matColumnDef="valor">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> VALOR </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.valor | currency}} </td>
+                                    <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td>
+                                </ng-container>
+
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+                            </table>
+                            <!-- <p>Total</p> -->
+                        <!-- </div> -->
+
+                    </div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+
+
+
+<!-- <ng-template #modalMensaje let-modal>
+    <h1 mat-dialog-title class="header1"> VER/DESCARGAR ARCHIVO</h1>
+    <div mat-dialog-content>
+
+    </div>
+    <div mat-dialog-actions>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+
+</ng-template> -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="m-title"> VER/DESCARGAR ARCHIVO</h5>
+            <div class="float-right">
+                <button type="button" class="btn btn-primary">DESCARGAR</button>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>

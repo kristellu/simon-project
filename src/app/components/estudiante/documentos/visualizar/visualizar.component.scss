@@ -1,0 +1,13 @@
+@import '../cargar/cargar.component.scss';
+
+.card-table{
+    height:582px!important;
+}
+
+.row{
+    @media screen and (max-width:780px){
+      .card-table{
+        width: 600px;
+      }
+    }
+  }

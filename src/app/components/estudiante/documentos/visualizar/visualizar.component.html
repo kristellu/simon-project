@@ -1,0 +1,66 @@
+<div class="row" style="justify-content: center; flex-direction: column;">
+    <mat-card class="card-table">
+        <mat-card-content>
+            <div class="row" style="justify-content: center;">
+                <div class="col-12" style="padding: 0 40px;">
+                    <mat-card-title class="header1">SU COMPRA</mat-card-title>
+                    <div>
+                        <table mat-table [dataSource]="dataSourceCompra">
+                            <!-- Service Column -->
+                            <ng-container matColumnDef="servicio">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> SERVICIO </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <p  class="checkbox-label" style="margin:0;">  <mat-icon color="accent">check </mat-icon> {{element.servicio}} </p></td>
+                                <td mat-footer-cell *matFooterCellDef>Total</td>
+                                </ng-container>
+                
+                             <!-- Value Column -->
+                            <ng-container matColumnDef="valor">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> VALOR </th>
+                                <td mat-cell *matCellDef="let element"> {{element.valor | currency}} </td>
+                                <td mat-footer-cell *matFooterCellDef mat-sort-header> {{getTotalCost() | currency}} </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumnsCompra"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumnsCompra;"></tr>
+                            <tr mat-footer-row *matFooterRowDef="displayedColumnsCompra"></tr>
+                        </table>
+                        <!-- <p>Total</p> -->
+                    </div> 
+                    
+                </div>
+                <div class="col-12" style="padding: 0 40px;">
+                    <mat-card-title class="header1">SUS DOCUMENTOS</mat-card-title>
+                    <div>
+                        <table mat-table [dataSource]="dataSource">
+                            <!-- Document Column -->
+                            <ng-container matColumnDef="documento">
+                                <th class="header-table" mat-header-cell *matHeaderCellDef mat-sort-header> DOCUMENTO </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <p  class="checkbox-label" style="margin:0;"> <mat-icon color="accent">cloud_done </mat-icon> {{ element.documento}} </p></td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="id">
+                                <th class="header-table"  mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+                                <td mat-cell *matCellDef="let element">
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                        <mat-checkbox color="primary" style="margin-top:37px;">
+                            <span  class="checkbox-label" style="text-transform: none; font-size: small;"> Los documentos registrados en el sistemas
+                                son fiel copia de los originales y los presenta
+                                como verdaderos. </span>
+                        </mat-checkbox> 
+                        <!-- <p>Total</p> -->
+                    </div> 
+                    
+                </div>
+            </div>
+            
+        </mat-card-content>
+    </mat-card>
+</div>
+

@@ -1,0 +1,107 @@
+<div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(assets/images/unisimon/mainBG.jpg) no-repeat center center; background-size:cover;">
+    <div class="auth-box">
+        <div id="loginform" [ngClass]="{'d-none': recoverform}">
+            <div class="row">
+                <div class="col login-left">
+
+                    <div class="row logo">
+                        <img src="assets/images/unisimon/logo-white.svg" alt="logo" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-md-12 iconos">
+                            <div class="social">
+                                <a href="javascript:void(0)" class="btn btn-lg" data-toggle="tooltip" title="" data-original-title="www">
+                                    <div class="icon-style">
+                                        <span class="icon icon-www"></span>
+                                    </div>
+                                    <p style="color: white">www</p>
+                                </a>
+                                <a href="javascript:void(0)" class="btn btn-lg" data-toggle="tooltip" title="" data-original-title="Recursos">
+                                    <div class="icon-style">
+                                        <span class="icon icon-recursos"></span>
+                                    </div>
+                                    <p style="color: white">Recursos</p>
+                                </a>
+                                <a href="javascript:void(0)" class="btn btn-lg" data-toggle="tooltip" title="" data-original-title="Soporte">
+                                    <div class="icon-style">
+                                        <span class="icon icon-soporte"></span>
+                                    </div>
+                                    <p style="color: white">Ayuda</p>
+                                </a>
+                                <a href="javascript:void(0)" class="btn btn-lg" data-toggle="tooltip" title="" data-original-title="Contacto">
+                                    <div class="icon-style">
+                                        <span class="icon icon-contacto"></span>
+                                    </div>
+                                    <p style="color: white">Contacto</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Form -->
+
+                <div class="col login-right">
+                    <p class="header">INICIAR SESIÓN</p>
+                    <form class="form-horizontal m-t-20" id="loginform" action="/dashboard/base">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text usuario" id="basic-addon1"></span>
+                            </div>
+                            <input type="text" class="form-control form-control-lg" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text contrasena" id="basic-addon2"></span>
+                            </div>
+                            <input type="text" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="col-xs-12 p-b-20">
+                                <button class="btn btn-block btn-lg btn-info" type="submit">Ingresar</button>
+
+                            </div>
+                            <a (click)="showRecoverForm()" href="javascript:void(0)" id="to-recover" class="text-blue float-left"> Recuperar contraseña</a>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="recoverform" [ngClass]="{'d-block': recoverform}">
+            <div class="logo">
+                <span class="db"><img src="assets/images/logo-icon.png" alt="logo" /></span>
+                <h5 class="font-medium m-b-20">Recover Password</h5>
+                <span>Enter your Email and instructions will be sent to you!</span>
+            </div>
+            <div class="row m-t-20">
+                <!-- Form -->
+                <form class="col-12">
+                    <!-- email -->
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <input class="form-control form-control-lg" type="email" required="" placeholder="Username">
+                        </div>
+                    </div>
+                    <!-- pwd -->
+                    <div class="row m-t-20">
+                        <div class="col-12">
+                            <button class="btn btn-block btn-lg btn-danger" type="submit" name="action">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer text-center">
+        <div class="row top">
+            <div class="col"><a href="javascript:void(0)">Ayuda</a></div>
+            <div class="col"><a href="javascript:void(0)">Privacidad</a></div>
+            <div class="col"><a href="javascript:void(0)">Términos</a></div>
+        </div>
+        <!-- <div class="row bottom" >Derechos reservados - UnisimonTI, V.4.0.9, 2019, B/quilla, CO</div> -->
+        <p>Derechos reservados · UNISIMON 2020, B/quilla, CO</p>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="d-flex flex-row bd-highlight pt-2 mb-2">
+        <div class="d-flex justify-content-start mr-auto">
+            <h3 class="card-title unisimon-titulo">Portal de Estudiantes</h3>
+        </div>
+        <mat-chip-list aria-label="options">
+            <mat-chip color="cancelar" selected>CANCELAR</mat-chip>
+            <mat-chip color="primary" selected>
+                <a style="color:white;" routerLink="/dashboard/documentos/visualizar">CONTINUAR</a> 
+                <mat-icon>keyboard_arrow_right</mat-icon> 
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+
+    <div class="main" >
+        <div class="col-md-4">
+            <div class="menu">
+                <mat-card class="card-option">
+                        <mat-card-header>
+                                <mat-card-title class="header1">LÍNEA DE CRÉDITO</mat-card-title>
+                        </mat-card-header>
+                        <div [formGroup]="formSolicitudes">
+                            <mat-card-content class="body-card">
+                                <mat-form-field style="width: 90%;">
+                                    <mat-label>Línea</mat-label>
+                                    <mat-select formControlName="linea">
+                                        <mat-option *ngFor="let item of listLinea" [value]="item.id">
+                                            {{item.nombre}}
+                                          </mat-option>
+                                    </mat-select> 
+                                    <mat-error *ngIf="f.linea.errors?.required">Por favor elegir una línea de crédito
+                                    </mat-error>
+                                </mat-form-field>
+                            </mat-card-content> 
+                        </div>
+                </mat-card>
+
+                <mat-card class="card-option">
+                        <mat-card-header>
+                                <mat-card-title class="header1">SUB LÍNEA DE CRÉDITO</mat-card-title>
+                        </mat-card-header>
+                        <div [formGroup]="formSolicitudes">
+                            <mat-card-content class="body-card">
+                                <mat-form-field style="margin-top: -2%; width: 90%;">
+                                    <mat-label>Sub Línea</mat-label>
+                                    <mat-select formControlName="sublinea">
+                                        <mat-option *ngFor="let item of listSublinea" [value]="item.id">
+                                            {{item.nombre}}
+                                          </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="f.sublinea.errors?.required">Por favor elegir una sub línea de crédito
+                                    </mat-error>
+                                </mat-form-field>
+                            </mat-card-content> 
+                        </div>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <router-outlet>
+            </router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,178 @@
+<div class="d-flex flex-row bd-highlight pt-2 mb-2">
+    <div class="d-flex justify-content-start mr-auto">
+        <h3 class="card-title unisimon-titulo">Créditos</h3>
+    </div>
+    <div class="form-group d-flex justify-content-end">
+        <a class="rechazado"> RECHAZADO <i class="ico-denied"></i> </a>
+        <a class="aprobado"> APROBADO <i class="ico-check"></i></a>
+    </div>
+</div>
+
+
+<div class="row " id="divDetalle">
+    <div class="col unisimon-content" style="height: unset;">
+        <h3 class="card-title title-poppins color-green-us">SOLICITUD</h3>
+        <div class="col-12">
+            <div class="card">
+                <div class="row">
+                    <form class="row solicitudes-f">
+                        <mat-form-field class="example-full-width col-4">
+                            <mat-label>Fecha Solicitud</mat-label>
+                            <input matInput autocomplete="on" #inpt1 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width  col-4">
+                            <mat-label>Código</mat-label>
+                            <input matInput autocomplete="on " #inpt2 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width col-4">
+                            <mat-label>Documento</mat-label>
+                            <input matInput autocomplete="on" #inpt3 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width  col-4">
+                            <mat-label>Primer Nombre</mat-label>
+                            <input matInput autocomplete="on " #inpt4 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width col-4">
+                            <mat-label>Segundo Nombre</mat-label>
+                            <input matInput autocomplete="on" #inpt5 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width  col-4">
+                            <mat-label>Primer Apellido</mat-label>
+                            <input matInput autocomplete="on " #inpt6 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width col-4">
+                            <mat-label>Segundo Apellido</mat-label>
+                            <input matInput autocomplete="on" #inpt7 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width  col-4">
+                            <mat-label>Linea</mat-label>
+                            <input matInput autocomplete="on " #inpt8 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width col-4">
+                            <mat-label>Sub-linea</mat-label>
+                            <input matInput autocomplete="on" #inpt9 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width  col-4">
+                            <mat-label>Estado Solicitud</mat-label>
+                            <input matInput autocomplete="on " #inpt10 readonly>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width col-4">
+                            <mat-label>Total Solicitud</mat-label>
+                            <input matInput autocomplete="on" #inpt11 readonly>
+                        </mat-form-field>
+                    </form>
+                </div>
+
+                <div style="padding-top: 2%; ">
+                    <h4 class="card-title title-poppins">ANEXOS</h4>
+                    <br>
+                    <table class="table table-sm m-b-0 ">
+                        <thead>
+                            <tr>
+                                <th scope="col " class="text-center header1 ">NOMBRE DEL DOCUMENTO</th>
+                                <th scope="col " class="text-left header1 ">VER</th>
+                                <th scope="col " class="text-left header1 ">EST</th>
+                                <th scope="col " class="text-left header1 ">OBS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of listdocumentoRequest ">
+                                <!-- <th class="text-center " scope="row ">{{item.id}}</th> -->
+                                <td class="text-left ">{{item.documento}}</td>
+                                <!-- <td class="text-center ">{{item.fechaCargue}}</td> -->
+                                <!-- <td class="text-center ">{{item.estudiante.nombre1}}</td> -->
+                                <td class="text-left ">
+                                    <a (click)="abrirModal() ">
+                                        <i class="ico-docum "></i>
+                                    </a>
+                                </td>
+                                <td class="text-left ">
+                                    <a (click)="getSolicitudDetalle(DocumentoAnexo) ">
+                                        <i class="ico-check "></i>
+                                    </a>
+                                </td>
+                                <td class="text-left ">
+                                    <a (click)="abrirModal() ">
+                                        <i data-original="ico-options " class="ico-options "></i>
+                                        <!-- <i class="ico-options "></i> -->
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="padding-top: 4%; ">
+                    <h4 class="card-title title-poppins">OBSERVACIONES GENERALES</h4>
+                    <br>
+                    <div class="form-group ">
+                        <div class="form-group ">
+                            <mat-form-field class="example-full-width col-12">
+                                <mat-label></mat-label>
+                                <textarea matInput #inpt12></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row "
+     id="divDetalle ">
+    <div class="col unisimon-content "
+         style="height: unset; ">
+
+        <h4 class="card-title ">Documentos Anexos</h4>
+        <table class="table table-sm m-b-0 ">
+            <thead>
+                <tr>
+                    <th scope="col " class="text-center ">Documento</th>
+                    <th scope="col " class="text-center ">Fecha de Cargue</th>
+                    <th scope="col " class="text-center ">Estudiante</th>
+                    <th scope="col " class="text-center ">Ver</th>
+                    <th scope="col " class="text-center ">Estado</th>
+                    <th scope="col "></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listdocumentoRequest ">
+                    <td class="text-center ">{{item.documento}}</td>
+                    <td class="text-center ">{{item.fechaCargue}}</td>
+                    <td class="text-center ">{{item.estudiante.nombre1}}</td>
+                     <td class="text-center ">
+                        <a (click)="abrirModal() ">
+                             <i class="ico-docum "></i>  
+                        </a>
+                    </td>
+                    <td class="text-center "><a (click)="getSolicitudDetalle(DocumentoAnexo) ">
+                        <i class="ico-check "></i>  
+                   </a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+ -->
+
+<ng-template #modalMensaje let-modal>
+    <div class="modal-header ">
+        <h4 class="modal-title ">
+            <span>Titulo</span>
+        </h4>
+        <button type="button " class="close " aria-label="Close " (click)="modal.dismiss( 'Cross click') ">
+            <span aria-hidden="true ">&times;</span>
+          </button>
+    </div>
+    <div class="modal-body ">
+        <p> <span>Mensaje</span></p>
+    </div>
+    <div class="modal-footer ">
+        <button type="button " class="btn btn-outline-dark " (click)="modal.close( 'Save click') ">Save</button>
+
+    </div>
+</ng-template>

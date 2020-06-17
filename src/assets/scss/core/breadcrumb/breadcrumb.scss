@@ -1,0 +1,31 @@
+/*******************
+ Breadcrumb and page title
+*******************/
+
+.page-breadcrumb {
+    background: #F6F6F6;
+    padding: 14px 20px 0 50px;
+    height: 50px;
+    box-sizing: border-box;
+    min-width: 1290px;
+    .page-title{
+        padding: 0;
+        font-size: 20px;
+        margin-bottom: 0px;
+        font-weight: normal;
+        color: #026533;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .breadcrumb {
+        padding: 0px;
+        margin: 0px;
+        background: transparent;
+        font-size: 12px;
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: "\e649";
+            font-family: themify;
+            color: $gray-400;
+            font-size: 11px;
+        }
+    }
+}
