@@ -1,7 +1,36 @@
 .spectro{
-    max-width: 100%;
+     max-width: 100%;
      width: 100%; 
      position: absolute; 
      height: 0.15em; 
      bottom: 0;
+}
+
+.default-topbar{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 56px;
+}
+
+.navigation-elements{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.fix-mobile-navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    i {
+        width: 20px !important;
+        height: 20px !important; 
+    }
+    @media screen and (min-width: 768px) {
+        display: none !important;
+    }
 }
