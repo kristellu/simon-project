@@ -1,4 +1,7 @@
 .menu{
+    display: flex;
+    align-items: center;
+
     @media screen and (max-width:768px){
         margin-left: 650px;
         position: absolute;
@@ -30,4 +33,13 @@
         position: absolute;
     }
    
+}
+.mobile-p-0{
+    padding: 0;
+}
+.mobile-m-0 {
+    @media screen and (max-width: 768px) {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 }

@@ -802,12 +802,11 @@ ul.first-level .sidebar-item .sidebar-link {
 
 .float-right {
     .nav-link {
-        padding: 10px;
+        padding-right: 8px; // cambie esto
     }
     .ico-ayuda {
         display: block;
-        margin-top: 10px;
-        margin-right: -25px;
+        margin-right: 2px;
         height: 26px !important;
         width: 26px !important;
     }
@@ -815,8 +814,9 @@ ul.first-level .sidebar-item .sidebar-link {
         margin: 4px 0;
     }
     .pro-pic img {
-        margin-right: 4px;
-        margin-top: 5px;
+        // margin-right: 4px;
+        // margin-top: 5px;
+        margin-right: 5px;
         height: 26px !important;
         width: 26px !important;
     }
@@ -830,6 +830,7 @@ ul.first-level .sidebar-item .sidebar-link {
 .arrow-user {
     display: block;
     margin-right: 2px;
+    margin-left: 5px;
     width: 7px;
     height: 7px;
     position: absolute;
